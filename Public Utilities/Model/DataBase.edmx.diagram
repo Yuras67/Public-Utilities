@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ae6d82610a624882b27e84bcb2d4b6f2" Name="Diagram1">
+        <EntityTypeShape EntityType="DBModel.Contracts" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Receipts" Width="1.5" PointX="7.5" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Services" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Users" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Workman" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBModel.Сonsumers" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="DBModel.FK_Contracts_Services" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Contracts_Сonsumers" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Receipts_Contracts" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Receipts_Сonsumers" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Workman_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="DBModel.FK_Сonsumers_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
