@@ -79,6 +79,9 @@
     <Compile Include="AdminPages\СonsumersPage.xaml.cs">
       <DependentUpon>СonsumersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConcumersPages\ContractsPage.xaml.cs">
+      <DependentUpon>ContractsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CS_Code\Management.cs" />
     <Compile Include="Model\Contracts.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminPages\СonsumersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConcumersPages\ContractsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
