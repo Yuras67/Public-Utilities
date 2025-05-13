@@ -1,4 +1,5 @@
-﻿using Public_Utilities.Model;
+﻿using Public_Utilities.Add_Folder;
+using Public_Utilities.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,12 @@ namespace Public_Utilities.AdminPages
                 DB.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                 ConsumersGrid.ItemsSource = DB.GetContext().Сonsumers.ToList();
             }
+        }
+
+        private void Button_Add(object sender, RoutedEventArgs e)
+        {
+            Add_Consumer add_Consumer = new Add_Consumer();
+            add_Consumer.Show();
         }
     }
 }

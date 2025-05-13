@@ -1,4 +1,5 @@
-﻿using Public_Utilities.Model;
+﻿using Public_Utilities.Add_Folder;
+using Public_Utilities.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,12 @@ namespace Public_Utilities.AdminPages
                 DB.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
                 WorkmanGrid.ItemsSource = DB.GetContext().Workman.ToList();
             }
+        }
+
+        private void Button_Add(object sender, RoutedEventArgs e)
+        {
+            Add_Workman add_Workman = new Add_Workman();
+            add_Workman.Show();
         }
     }
 }

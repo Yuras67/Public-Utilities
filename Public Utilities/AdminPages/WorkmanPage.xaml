@@ -27,44 +27,43 @@
                FontSize="25" Height="43" Width="276" Margin="212,0,0,0"/>
 
         <StackPanel Grid.Column="0"
-                    Orientation="Horizontal"
-                    Height="50"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Left" Width="584" Margin="58,106,0,0" Grid.Row="0">
-            <Button Content="Выставить счёт"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Сменить статус платежа"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Удалить платеж"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Отчет о платежах"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Квитанция об оплате"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
+            Orientation="Horizontal"
+            Height="50"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center" Width="692" Grid.Row="0" Margin="0,109,0,0">
+            <Button Content="Создать"
+            Height="35"
+            Width="60"
+            Background="Gray"
+            Margin="120,0,5,0"
+            HorizontalAlignment="Center"
+            Foreground="White" Click="Button_Add"
+            />
+            <Button Content="Удалить"
+            Height="35"
+            Width="60"
+            Margin="5,0,5,0"
+            Background="Gray"
+            Foreground="White"/>
+            <Button Content="Создать отчёт Word"
+            Height="35"
+            Margin="5,0,5,0"
+            Background="Gray"
+            Foreground="White"/>
+            <Button Content="Создать отчёт Excel"
+            Height="35"
+            Margin="5,0,5,0"
+            Background="Gray"
+            Foreground="White"/>
         </StackPanel>
 
         <DataGrid Grid.Column="0" AutoGenerateColumns="False" x:Name="WorkmanGrid" Grid.Row="1"
                   IsReadOnly="True"
                   Background="Transparent" BorderThickness="0">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID рабочего" Binding="{Binding Workman_ID}" Width="30"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID рабочего" Binding="{Binding Workman_ID}" Width="90"></DataGridTextColumn>
                 <DataGridTextColumn Header="ФИО" Width="*" Binding="{Binding FullName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Iльзователя" Width="*" Binding="{Binding User_ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID пользователя" Width="102" Binding="{Binding User_ID}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Номер телефона" Width="*" Binding="{Binding Phone}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Почта" Width="*" Binding="{Binding Email}"></DataGridTextColumn>
             </DataGrid.Columns>

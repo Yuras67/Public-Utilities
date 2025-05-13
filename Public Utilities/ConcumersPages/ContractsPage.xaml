@@ -5,10 +5,69 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Public_Utilities.ConcumersPages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" 
+      d:DesignWidth="700"
       Title="ContractsPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="687*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="159"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Content="Договоры"
+               FontSize="25" Height="43" Width="276" Margin="309,0,0,0"/>
+
+        <StackPanel Grid.Column="1"
+                    Orientation="Horizontal"
+                    Height="50"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left" Width="584" Margin="53,106,0,0" Grid.Row="0">
+            <Button Content="Выставить счёт"
+                    Height="35"
+                    Margin="5,0,5,0"
+                    Background="Gray"
+                    Foreground="White"/>
+            <Button Content="Сменить статус платежа"
+                    Height="35"
+                    Margin="5,0,5,0"
+                    Background="Gray"
+                    Foreground="White"/>
+            <Button Content="Удалить платеж"
+                    Height="35"
+                    Margin="5,0,5,0"
+                    Background="Gray"
+                    Foreground="White"/>
+            <Button Content="Отчет о платежах"
+                    Height="35"
+                    Margin="5,0,5,0"
+                    Background="Gray"
+                    Foreground="White"/>
+            <Button Content="Квитанция об оплате"
+                    Height="35"
+                    Margin="5,0,5,0"
+                    Background="Gray"
+                    Foreground="White"/>
+        </StackPanel>
+
+        <DataGrid Grid.Column="1" AutoGenerateColumns="False" x:Name="ConsumersGrid" Grid.Row="1"
+                  IsReadOnly="True"
+                  Background="Transparent" BorderThickness="0" ItemsSource="{Binding Contracts}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID договора" Binding="{Binding Contract_ID}" Width="100" />
+                <DataGridTextColumn Header="Услуга" Binding="{Binding Service_Name}" Width="120"/>
+                <DataGridTextColumn Header="Организация" Binding="{Binding Organization}" Width="*"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}" Width="*"/>
+                <DataGridTextColumn Header="Сумма" Binding="{Binding Price}" Width="85"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>

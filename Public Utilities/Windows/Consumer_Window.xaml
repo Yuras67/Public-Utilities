@@ -11,33 +11,43 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="224"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <StackPanel VerticalAlignment="Top"
-                    Grid.Column="0">
+                    Grid.Column="0" Height="250">
             <Button Content="Главная"
                     Height="50"
                     FontSize="20"
                     FontWeight="Bold"
                     Background="Blue"/>
-            <Button Content="Учёт оплаты"
-                    Height="50"
-                    FontSize="20"
-                    FontWeight="Bold"
-                    Background="Blue"/>
+            <Button 
+                Content="Квитанции"
+                Height="50"
+                FontSize="20"
+                FontWeight="Bold"
+                Background="Blue"
+                Click="Open_Receipts"/>
+            <Button 
+                Content="Договора"
+                Height="50"
+                FontSize="20"
+                FontWeight="Bold"
+                Background="Blue" Click="Open_Contracts"/>
         </StackPanel>
-
+        <Frame NavigationUIVisibility="Hidden" Name="MainFrame" Grid.Column="1"/>
         <Button Grid.Column="0"
                 Height="50"
                 Content="Выход"
                 FontSize="20"
                 FontWeight="Bold"
                 Background="Red"
-                VerticalAlignment="Bottom"
-                Click="Button_Click_Exit"/>
-        
-        
+                VerticalAlignment="Top"
+                Click="Button_Click_Exit" Margin="0,734,0,0"/>
+        <Border BorderBrush="Black" BorderThickness="2.5,1,1,1" Grid.Column="1"/>
+        <Border BorderBrush="Black" BorderThickness="1,1,2,1" Grid.Column="0"/>
+
+
     </Grid>
 </Window>

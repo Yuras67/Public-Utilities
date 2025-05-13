@@ -64,6 +64,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Add_Folder\Add_Consumer.xaml.cs">
+      <DependentUpon>Add_Consumer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Folder\Add_Contract.xaml.cs">
+      <DependentUpon>Add_Contract.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Folder\Add_Receipt.xaml.cs">
+      <DependentUpon>Add_Receipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Folder\Add_Service.xaml.cs">
+      <DependentUpon>Add_Service.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Folder\Add_User.xaml.cs">
+      <DependentUpon>Add_User.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Folder\Add_Workman.xaml.cs">
+      <DependentUpon>Add_Workman.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\ContractsPage.xaml.cs">
       <DependentUpon>ContractsPage.xaml</DependentUpon>
     </Compile>
@@ -81,6 +99,9 @@
     </Compile>
     <Compile Include="ConcumersPages\ContractsPage.xaml.cs">
       <DependentUpon>ContractsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConcumersPages\ReceiptsPage.xaml.cs">
+      <DependentUpon>ReceiptsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="CS_Code\Management.cs" />
     <Compile Include="Model\Contracts.cs">
@@ -128,6 +149,30 @@
     <Compile Include="Windows\Consumer_Window.xaml.cs">
       <DependentUpon>Consumer_Window.xaml</DependentUpon>
     </Compile>
+    <Page Include="Add_Folder\Add_Consumer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_Folder\Add_Contract.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_Folder\Add_Receipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_Folder\Add_Service.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_Folder\Add_User.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Add_Folder\Add_Workman.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminPages\ContractsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -153,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ConcumersPages\ContractsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConcumersPages\ReceiptsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

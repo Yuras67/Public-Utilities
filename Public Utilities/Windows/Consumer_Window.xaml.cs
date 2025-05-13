@@ -23,13 +23,30 @@ namespace Public_Utilities.Windows
         public Consumer_Window(int user_id)
         {
             InitializeComponent();
+            Session.CurrentUserId = user_id;
         }
+
+        public static class Session
+        {
+            public static int CurrentUserId { get; set; }
+        }
+
 
         private void Button_Click_Exit(object sender, RoutedEventArgs e)
         {
             AuthWindow authWindow = new AuthWindow();
             authWindow.Show();
             this.Close();
+        }
+
+        private void Open_Contracts(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ConcumersPages.ContractsPage());
+        }
+
+        private void Open_Receipts(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ConcumersPages.ReceiptsPage());
         }
     }
 }
