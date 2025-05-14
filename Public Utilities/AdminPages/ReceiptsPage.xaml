@@ -44,22 +44,24 @@
             Width="60"
             Margin="5,0,5,0"
             Background="Gray"
-            Foreground="White"/>
+            Foreground="White" Click="Button_Remove"/>
             <Button Content="Создать отчёт Word"
-            Height="35"
-            Margin="5,0,5,0"
-            Background="Gray"
-            Foreground="White"/>
-            <Button Content="Создать отчёт Excel"
-            Height="35"
-            Margin="5,0,5,0"
-            Background="Gray"
-            Foreground="White"/>
+                    Height="35"
+                    Margin="5,0,5,0"
+                    Background="Gray"
+                    Foreground="White"
+                    Click="Button_Click_Word"/>
+            <Button 
+                Content="Создать отчёт Excel"
+                Height="35"
+                Margin="5,0,5,0"
+                Background="Gray"
+                Foreground="White"
+                Click="Button_Click_Excel"/>
         </StackPanel>
 
         <DataGrid Grid.Column="0" AutoGenerateColumns="False" x:Name="ReceiptsGrid" Grid.Row="1"
-                  IsReadOnly="True"
-                  Background="Transparent" BorderThickness="0">
+                  IsReadOnly="True">
             <DataGrid.ItemContainerStyle>
                 <Style TargetType="DataGridRow">
                     <Style.Triggers>
@@ -81,7 +83,15 @@
                 <DataGridTextColumn Header="ID договора" Width="*" Binding="{Binding Contract_ID}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Status}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Сумма оплаты" Width="*" Binding="{Binding PaymentAmount}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding Date}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding Date, StringFormat=\{0:dd.MM.yyyy\}}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Click="Button_edit_data" 
+                                    Name="BtnEdit" Background="#ADD8E6" FontSize="20" BorderThickness="0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

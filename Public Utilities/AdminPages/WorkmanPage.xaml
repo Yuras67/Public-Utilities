@@ -44,17 +44,17 @@
             Width="60"
             Margin="5,0,5,0"
             Background="Gray"
-            Foreground="White"/>
+            Foreground="White" Click="Button_Remove"/>
             <Button Content="Создать отчёт Word"
             Height="35"
             Margin="5,0,5,0"
             Background="Gray"
-            Foreground="White"/>
+            Foreground="White" Click="Button_Click_Word"/>
             <Button Content="Создать отчёт Excel"
             Height="35"
             Margin="5,0,5,0"
             Background="Gray"
-            Foreground="White"/>
+            Foreground="White" Click="Button_Click_Excel"/>
         </StackPanel>
 
         <DataGrid Grid.Column="0" AutoGenerateColumns="False" x:Name="WorkmanGrid" Grid.Row="1"
@@ -66,6 +66,14 @@
                 <DataGridTextColumn Header="ID пользователя" Width="102" Binding="{Binding User_ID}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Номер телефона" Width="*" Binding="{Binding Phone}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Почта" Width="*" Binding="{Binding Email}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Click="Button_edit_data" 
+                                    Name="BtnEdit" Background="#ADD8E6" FontSize="20" BorderThickness="0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

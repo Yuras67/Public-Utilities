@@ -21,7 +21,7 @@
                     Height="50"
                     FontSize="20"
                     FontWeight="Bold"
-                    Background="Blue"/>
+/>
             <Button Content="Пользователи"
                     Height="50"
                     FontSize="20"
@@ -60,7 +60,7 @@
                 FontSize="20"
                 FontWeight="Bold"
                 Background="Red"
-                VerticalAlignment="Top" Click="Button_Click_Exit" Margin="0,734,0,0"/>
+                VerticalAlignment="Bottom" Click="Button_Click_Exit" />
 
 
     </Grid>

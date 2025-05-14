@@ -25,41 +25,9 @@
                Content="Квитанции"
                FontSize="25" Height="43" Width="276" Margin="212,0,0,0"/>
 
-        <StackPanel Grid.Column="0"
-                    Orientation="Horizontal"
-                    Height="50"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Left" Width="584" Margin="58,106,0,0" Grid.Row="0">
-            <Button Content="Выставить счёт"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Сменить статус платежа"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Удалить платеж"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Отчет о платежах"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Квитанция об оплате"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-        </StackPanel>
-
         <DataGrid Grid.Column="0" AutoGenerateColumns="False" x:Name="ReceiptsGrid" Grid.Row="1"
                   IsReadOnly="True"
-                  Background="Transparent" BorderThickness="0">
+                  Background="Transparent" BorderThickness="0" ItemsSource="{Binding Receipts}">
             <DataGrid.ItemContainerStyle>
                 <Style TargetType="DataGridRow">
                     <Style.Triggers>
@@ -78,7 +46,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID квитанции" Binding="{Binding Receipt_ID}" Width="90"></DataGridTextColumn>
                 <DataGridTextColumn Header="ID договора" Width="*" Binding="{Binding Contract_ID}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding Сonsumers.Address}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Адрес" Width="*" Binding="{Binding Address}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Дата" Width="*" Binding="{Binding Date}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Сумма оплаты" Width="*" Binding="{Binding PaymentAmount}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Status}"></DataGridTextColumn>

@@ -26,38 +26,6 @@
                Content="Договоры"
                FontSize="25" Height="43" Width="276" Margin="309,0,0,0"/>
 
-        <StackPanel Grid.Column="1"
-                    Orientation="Horizontal"
-                    Height="50"
-                    VerticalAlignment="Top"
-                    HorizontalAlignment="Left" Width="584" Margin="53,106,0,0" Grid.Row="0">
-            <Button Content="Выставить счёт"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Сменить статус платежа"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Удалить платеж"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Отчет о платежах"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-            <Button Content="Квитанция об оплате"
-                    Height="35"
-                    Margin="5,0,5,0"
-                    Background="Gray"
-                    Foreground="White"/>
-        </StackPanel>
-
         <DataGrid Grid.Column="1" AutoGenerateColumns="False" x:Name="ConsumersGrid" Grid.Row="1"
                   IsReadOnly="True"
                   Background="Transparent" BorderThickness="0" ItemsSource="{Binding Contracts}">

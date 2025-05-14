@@ -44,17 +44,21 @@
             Width="60"
             Margin="5,0,5,0"
             Background="Gray"
-            Foreground="White"/>
+            Foreground="White" Click="Button_Remove"/>
+            
             <Button Content="Создать отчёт Word"
             Height="35"
             Margin="5,0,5,0"
             Background="Gray"
-            Foreground="White"/>
+            Foreground="White"
+                    Click="Button_Click_Word"/>
+            
             <Button Content="Создать отчёт Excel"
             Height="35"
             Margin="5,0,5,0"
             Background="Gray"
-            Foreground="White"/>
+            Foreground="White"
+                    Click="Button_Click_Excel"/>
         </StackPanel>
 
         <DataGrid Grid.Column="0" AutoGenerateColumns="False" x:Name="UserGrid" Grid.Row="1"
@@ -65,6 +69,14 @@
                 <DataGridTextColumn Header="Логин" Width="*" Binding="{Binding Login}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Пароль" Width="*" Binding="{Binding Password}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Роль" Width="*" Binding="{Binding Role}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" Click="Button_edit_data" 
+                                    Name="BtnEdit" Background="#ADD8E6" FontSize="20" BorderThickness="0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

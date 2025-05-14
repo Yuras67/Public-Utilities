@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Public_Utilities.Windows"
         mc:Ignorable="d"
         Title="Учёт оплаты коммунальных услуг" 
-        Height="800" Width="1000"
-        MinHeight="800" MinWidth="1000"
+        Height="720" Width="1000"
+        MinHeight="720" MinWidth="1000"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -43,8 +43,8 @@
                 FontSize="20"
                 FontWeight="Bold"
                 Background="Red"
-                VerticalAlignment="Top"
-                Click="Button_Click_Exit" Margin="0,734,0,0"/>
+                VerticalAlignment="Bottom"
+                Click="Button_Click_Exit"/>
         <Border BorderBrush="Black" BorderThickness="2.5,1,1,1" Grid.Column="1"/>
         <Border BorderBrush="Black" BorderThickness="1,1,2,1" Grid.Column="0"/>
 

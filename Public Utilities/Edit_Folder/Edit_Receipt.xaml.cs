@@ -13,31 +13,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Public_Utilities.Add_Folder
+namespace Public_Utilities.Edit_Folder
 {
     /// <summary>
-    /// Логика взаимодействия для Add_User.xaml
+    /// Логика взаимодействия для Edit_Receipt.xaml
     /// </summary>
-    public partial class Add_User : Window
+    public partial class Edit_Receipt : Window
     {
-        private Users _users = new Users();
-        public Add_User()
+        private Receipts _currentReceipt = new Receipts();
+        public Edit_Receipt(Receipts selectedReceipt)
         {
             InitializeComponent();
-            DataContext = _users;
+            DataContext = _currentReceipt;
+
+            if (_currentReceipt != null)
+                _currentReceipt = selectedReceipt;
+            DataContext = _currentReceipt;
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-
-            if (string.IsNullOrWhiteSpace(_users.Login))
-                errors.AppendLine("Укажите логин");
-            if (string.IsNullOrWhiteSpace(_users.Password))
-                errors.AppendLine("Укажите пароль");
-            if (string.IsNullOrWhiteSpace(_users.Role))
-                errors.AppendLine("Укажите роль");
-
 
             if (errors.Length > 0)
             {
@@ -45,13 +42,13 @@ namespace Public_Utilities.Add_Folder
                 return;
             }
 
-            if (_users.User_ID == 0)
-                DB.GetContext().Users.Add(_users);
+            if (_currentReceipt.Receipt_ID == 0)
+                DB.GetContext().Receipts.Add(_currentReceipt);
 
             try
             {
                 DB.GetContext().SaveChanges();
-                MessageBox.Show("Пользователь создан");
+                MessageBox.Show("Данные изменены");
                 this.Close();
             }
             catch (Exception ex)

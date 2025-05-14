@@ -1,4 +1,5 @@
-﻿using Public_Utilities.Model;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using Public_Utilities.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,7 @@ namespace Public_Utilities.Add_Folder
         public Add_Receipt()
         {
             InitializeComponent();
+            DataContext = _receipts;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

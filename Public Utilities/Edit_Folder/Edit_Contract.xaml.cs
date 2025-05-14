@@ -13,31 +13,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Public_Utilities.Add_Folder
+namespace Public_Utilities.Edit_Folder
 {
     /// <summary>
-    /// Логика взаимодействия для Add_User.xaml
+    /// Логика взаимодействия для Edit_Contrat.xaml
     /// </summary>
-    public partial class Add_User : Window
+    public partial class Edit_Contract : Window
     {
-        private Users _users = new Users();
-        public Add_User()
+        private Contracts _currentContract = new Contracts();
+        public Edit_Contract(Contracts selectedContract)
         {
             InitializeComponent();
-            DataContext = _users;
+            DataContext = _currentContract;
+
+            if (_currentContract != null)
+                _currentContract = selectedContract;
+            DataContext = _currentContract;
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-
-            if (string.IsNullOrWhiteSpace(_users.Login))
-                errors.AppendLine("Укажите логин");
-            if (string.IsNullOrWhiteSpace(_users.Password))
-                errors.AppendLine("Укажите пароль");
-            if (string.IsNullOrWhiteSpace(_users.Role))
-                errors.AppendLine("Укажите роль");
-
 
             if (errors.Length > 0)
             {
@@ -45,13 +42,13 @@ namespace Public_Utilities.Add_Folder
                 return;
             }
 
-            if (_users.User_ID == 0)
-                DB.GetContext().Users.Add(_users);
+            if (_currentContract.Contract_ID == 0)
+                DB.GetContext().Contracts.Add(_currentContract);
 
             try
             {
                 DB.GetContext().SaveChanges();
-                MessageBox.Show("Пользователь создан");
+                MessageBox.Show("Данные изменены");
                 this.Close();
             }
             catch (Exception ex)
